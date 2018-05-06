@@ -1,0 +1,24 @@
+name: db_check
+version: 0.1.0
+
+authors:
+  - Data <gnuos@sina.cn>
+
+targets:
+  db_check:
+    main: src/db_check.cr
+
+crystal: 0.24.2
+
+license: MIT
+
+dependencies:
+  db:
+    github: crystal-lang/crystal-db
+  mysql:
+    github: crystal-lang/crystal-mysql
+  pg:
+    github: will/crystal-pg
+  commander:
+    github: mrrooijen/commander
+    version: ~> 0.3.3
