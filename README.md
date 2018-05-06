@@ -1,18 +1,30 @@
 # db_check
 
-TODO: Write a description here
+db_check是一个用Crystal语言编写的工具，用来检查数据库的健康状态。
 
 ## Installation
 
-TODO: Write installation instructions here
+安装之前要确保你已经安装了Crystal语言的编译器，在 [Crystal官方文档](https://crystal-lang/docs/) 里可以找到安装方法，但是目前不支持Windows系统。
+
+```bash
+git clone https://github.com/gnuos/db_check.git
+cd db_check
+crystal deps
+crystall build --release -s src/db_check.cr
+
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+执行下面的命令查看使用帮助
+
+```bash
+./db_check help
+```
 
 ## Development
 
-TODO: Write development instructions here
+目前仅支持 mysql 和 postgresql 数据库的健康检查，crystal-mysql 库里有一个bug，在 lib/mysql/src/mysql/connection.cr 文件中有一个 initial_catalog 变量，应将 `initial_catalog = path[1..-1]` 改为 `initial_catalog = path[0..-1]`。
 
 ## Contributing
 
@@ -24,4 +36,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name]) Data - creator, maintainer
+- [[db_check]](https://github.com/gnuos) Data - creator, maintainer
